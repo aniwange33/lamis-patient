@@ -101,7 +101,7 @@ export interface Patient {
     status?: string;
     lga?: Lga
     extra?: any;
-    uuid?: string;
+      uuid?: string;
 }
 
 export interface OVC {

@@ -38,4 +38,10 @@
                                  referencedTableName="patient"/>
     </changeSet>
 
+    <changeSet id="20201104192025-05" author="mattae">
+        <sql>
+            update patient set extra = extra || concat('{"targetGroup": "', target_group, '"}')::jsonb where target_group is not null
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>

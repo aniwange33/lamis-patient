@@ -47,6 +47,7 @@ export class PatientEditComponent implements OnInit {
     prepId: string;
     indicationForPrep: string;
     onDemandIndication: string;
+    targetGroup: string;
 
     constructor(private patientService: PatientService,
                 protected notification: NotificationService,
@@ -83,6 +84,9 @@ export class PatientEditComponent implements OnInit {
                     this.state = res;
                     this.stateChange(this.state.id);
                 })
+            }
+            if(this.entity.extra ){
+                this.targetGroup = this.entity.extra.targetGroup
             }
             if (this.entity.extra && this.entity.extra.prep) {
                 this.prep = true;
@@ -234,6 +238,9 @@ export class PatientEditComponent implements OnInit {
 
                 return
             }
+        }
+        if (this.targetGroup) {
+            this.entity.extra.targetGroup = this.targetGroup;
         }
         this.loaderService.open('Saving patient...');
         if (!this.entity.id) {

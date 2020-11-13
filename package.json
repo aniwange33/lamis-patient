@@ -1,5 +1,5 @@
 {
-  "name": "lamis-patient-1.4.0",
+  "name": "lamis-patient-1.4.1",
   "version": "1.0.2",
   "main": "./bundles/lamis-patient.umd.js",
   "module": "./fesm5/lamis-patient.js",
